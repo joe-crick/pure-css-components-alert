@@ -7,9 +7,10 @@
   "author": "Joe Crick",
   "license": "MIT",
   "scripts": {
-    "build:uglify": ". ./build.sh",
+    "build:lint": "eslint index.js",
+    "build:uglify": "uglifyjs --compress --mangle --screw-ie8 --source-map -- index.js > index.min.js",
     "build:test": "node test.js | tap-spec",
-    "build": "npm-run-all build:test build:uglify"
+    "build": "npm-run-all build:lint build:test build:uglify"
   },
   "devDependencies": {
     "mock-browser": "^0.92.12",
