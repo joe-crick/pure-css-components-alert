@@ -15,6 +15,10 @@ function setUp(isAlertShown) {
   return document;
 }
 
+function tearDown() {
+  document = undefined;
+}
+
 test('Alert ', nest => {
   nest.test('Shows an alert', assert => {
     const doc = setUp(false);
@@ -24,6 +28,7 @@ test('Alert ', nest => {
     alert.show();
     assert.ok(!alertToggle.checked, 'alert should show');
     assert.end();
+    tearDown();
   });
 
   nest.test('Hides a alert', assert => {
@@ -34,6 +39,7 @@ test('Alert ', nest => {
     alert.hide();
     assert.ok(alertToggle.checked, 'alert should be hidden');
     assert.end();
+    tearDown();
   });
 
   nest.test('Toggles a alert', assert => {
@@ -46,6 +52,7 @@ test('Alert ', nest => {
     alert.toggle();
     assert.ok(alertToggle.checked, 'alert should be hidden');
     assert.end();
+    tearDown();
   });
 
   nest.test('Shows open state', assert => {
@@ -56,6 +63,7 @@ test('Alert ', nest => {
     alert.show();
     assert.ok(alert.isOpen() === !alertToggle.checked, 'alert should be shown');
     assert.end();
+    tearDown();
   });
 
   nest.test('Shows closed state', assert => {
@@ -66,6 +74,7 @@ test('Alert ', nest => {
     alert.hide();
     assert.ok(alert.isClosed() === alertToggle.checked, 'alert should be shown');
     assert.end();
+    tearDown();
   });
 
 });
