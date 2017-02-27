@@ -33,6 +33,6 @@ module.exports = function Alert(selector) {
       alertState.checked = true;
     }
 
-  }
+  };
 
 };
