@@ -70,4 +70,3 @@ myAlert.isOpen();
 myAlert.isClosed();
 
 ```
-
