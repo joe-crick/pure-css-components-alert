@@ -1,5 +1,5 @@
 {
-  "name": "purecss-components-modal",
+  "name": "purecss-components-alert",
   "version": "0.0.1",
   "description": "A small JS utility that manipulates purecss-components alerts",
   "main": "index.js",
